@@ -1,128 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/pet-animal/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/pet-animal/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/pet-animal/assets/styles-DvPDDfy5.css">
-  </head>
-  <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/pet-animal/assets/sprite-E8vg0sBb.svg#logo"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<html lang="uk">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paw Hut — Наші хвостики</title>
+  <script type="module" crossorigin src="/pet-animal/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/pet-animal/assets/vendor-CC12I-6Z.js">
+  <link rel="stylesheet" crossorigin href="/pet-animal/assets/index-BCF7nlkP.css">
+</head>
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
-  <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
-      >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/pet-animal/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
+<body>
+
+  <!-- Секція «Наші хвостики» -->
+  <section class="pets-section">
+    <div class="container">
+      <h2 class="section-title">Наші хвостики</h2>
+      <p class="section-subtitle">Вони дуже чекають на знайомство з вами</p>
+
+      <!-- Блок елементів фільтрації (Категорії) -->
+      <div class="categories-filter" id="categories-container">
+        <button class="filter-btn active" data-category="all">Всі</button>
+      </div>
+
+      <!-- Список карток тварин -->
+      <div class="pets-grid" id="pets-grid"></div>
+
+      <!-- Пагінація -->
+      <div class="pagination-container">
+        <button id="load-more-btn" class="btn btn-load-more">Завантажити ще</button>
+      </div>
     </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
+  </section>
+
+  <!-- Модальне вікно детальної інформації -->
+  <div class="modal-overlay" id="pet-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close" aria-label="Закрити модальне вікно">&times;</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
   </div>
-</section>
 
-      <article class="badges">
-  <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
-      </li>
-    </ul>
-  </div>
-</article>
+</body>
 
-    </main>
-
-    <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
-  </div>
-</footer>
-
-
-  </body>
 </html>
