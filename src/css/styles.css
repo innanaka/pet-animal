@@ -1,18 +1,273 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+/* Змінні для точного збігу з дизайном макета */
+:root {
+  --color-primary: #a37a74;
+  --color-primary-hover: #8c635d;
+  --color-text-main: #000000;
+  --color-text-muted: #777777;
+  --font-main: 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text-main);
+  background-color: #ffffff;
+}
+
+/* Контейнер секції */
+.pets-section {
+  padding: 60px 20px;
+  background-color: #fcf6f5;
+  /* Ніжний світлий фон з макета */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+}
+
+/* Фільтри як текстові елементи без рамок за макетом */
+.categories-filter {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-main);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.filter-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Активний фільтр виділяється за макетом */
+.filter-btn.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Сітка карток: рівно 3 колонки на десктопі (разом 9 карток) */
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 650px) {
+  .pets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pets-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+  }
+}
+
+/* Стиль прозорої картки без фону та тіней за макетом */
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  background: none;
+}
+
+/* Обертка фото з фіксованою висотою та закругленням */
+.pet-image-wrapper {
+  width: 100%;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background-color: #ebdcd9;
+}
+
+.pet-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Текстовий блок картки */
+.pet-info-block {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* Дрібний сірий напис виду над ім'ям */
+.pet-card-top-type {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
+/* Велике жирне ім'я тварини */
+.pet-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 4px;
+}
+
+/* Текстові підкатегорії під ім'ям */
+.pet-tags-text {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* Вік та стать в один рядок */
+.pet-meta-tags {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
+}
+
+.pet-meta-tags span {
+  display: inline-block;
+}
+
+/* Опис тварини */
+.pet-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Кнопка «Дізнатись більше» за макетом */
+.btn-more {
+  background-color: #ebdcd9;
+  /* Легкий бежевий фон кнопки */
+  border: 1px solid #000000;
+  /* Тонка чорна рамка */
+  color: #000000;
+  padding: 12px;
+  border-radius: 30px;
+  /* Округлі краї */
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-more:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* Нижня кнопка пагінації «Завантажити ще» */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-load-more {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-load-more:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-load-more:disabled {
+  display: none;
+}
+
+/* Модальне вікно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 550px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+}
