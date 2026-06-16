@@ -1,380 +1,287 @@
 
+
+/* Змінні для точного збігу з дизайном макета */
 :root {
-    --font-family: "IBM Plex Sans", sans-serif;
-    --second-family: "Open Sans", sans-serif;
-
-    --color-white: #fff;
-    --color-red: #ae0000;
-
-    --color-neutral-darkest: #02060a;
-    --color-neutral-darker: #1b1e22;
-    --color-neutral-dark: #4d5053;
-    --color-neutral: #808284;
-    --color-neutral-light: #b3b4b5;
-    --color-neutral-lighter: #d9d9da;
-    --color-neutral-lightest: #f2f2f2;
-
-    --color-mariner-darkest: #332c22;
-    --color-mariner-darker: #443b2e;
-    --color-mariner-dark: #88765c;
-    --color-mariner: #c3b49d;
-    --color-mariner-light: #c3b49d;
-    --color-mariner-lighter: #eee9e3;
-    --color-mariner-lightest: #f6f4f1;
-
-    --opacity-transparent: rgba(255, 255, 255, 0);
-    --opacity-white-5: rgba(255, 255, 255, 0.05);
-    --opacity-white-10: rgba(255, 255, 255, 0.1);
-    --opacity-white-15: rgba(255, 255, 255, 0.15);
-    --opacity-white-20: rgba(255, 255, 255, 0.2);
-    --opacity-white-30: rgba(255, 255, 255, 0.3);
-    --opacity-white-40: rgba(255, 255, 255, 0.4);
-    --opacity-white-50: rgba(255, 255, 255, 0.5);
-    --opacity-white-60: rgba(255, 255, 255, 0.6);
-
-    --opacity-neutral-darkest-5: rgba(2, 6, 10, 0.05);
-    --opacity-neutral-darkest-10: rgba(2, 6, 10, 0.1);
-    --opacity-neutral-darkest-15: rgba(2, 6, 10, 0.15);
-    --opacity-neutral-darkest-20: rgba(2, 6, 10, 0.2);
-    --opacity-neutral-darkest-30: rgba(2, 6, 10, 0.3);
-    --opacity-neutral-darkest-40: rgba(2, 6, 10, 0.4);
-    --opacity-neutral-darkest-50: rgba(2, 6, 10, 0.5);
-    --opacity-neutral-darkest-60: rgba(2, 6, 10, 0.6);
-
-    --color-scheme-1-background: var(--color-mariner-lightest);
-    --color-scheme-1-foreground: var(--color-mariner-lighter);
-    --color-scheme-1-border: var(--opacity-neutral-darkest-15);
-    --color-scheme-1-text: var(--color-neutral-darkest);
-    --color-scheme-1-accent: var(--color-mariner);
-
-    --color-scheme-2-background: var(--color-mariner);
-    --color-scheme-2-foreground: var(--color-mariner-dark);
-    --color-scheme-2-border: var(--opacity-white-20);
-    --color-scheme-2-text: var(--color-white);
-    --color-scheme-2-accent: var(--color-white);
+  --color-primary: #a37a74;
+  --color-primary-hover: #8c635d;
+  --color-text-main: #000000;
+  --color-text-muted: #777777;
+  --font-main: 'Segoe UI', Roboto, sans-serif;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: var(--font-family);
-    color: var(--color-scheme-1-text);
-    background-color: var(--color-white);
-    -webkit-font-smoothing: antialiased;
+  font-family: var(--font-main);
+  color: var(--color-text-main);
+  background-color: #ffffff;
 }
 
+/* Контейнер секції */
 .pets-section {
-    background-color: var(--color-scheme-1-background);
+  padding: 60px 20px;
+  background-color: #fcf6f5;
+  /* Ніжний світлий фон з макета */
 }
-
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 64px 20px 32px;
-    
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-title {
-    text-align: center;
-    font-family: var(--second-family);
-    font-size: 36px;
-    /* Налаштування для Phone */
-    line-height: 1.2;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: var(--color-scheme-1-text);
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .section-subtitle {
-    text-align: center;
-    font-size: 16px;
-    /* Налаштування для Phone */
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: var(--color-neutral-dark);
-    margin-bottom: 40px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
 }
 
+/* Фільтри як текстові елементи без рамок за макетом */
 .categories-filter {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto 50px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
 }
 
 .filter-btn {
-    background: none;
-    border: none;
-    color: var(--color-scheme-1-text);
-    font-family: var(--font-family);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 5px 10px;
-    transition: color 0.2s ease;
+  background: none;
+  border: none;
+  color: var(--color-text-main);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Активний фільтр виділяється за макетом */
 .filter-btn.active {
-    color: var(--color-scheme-1-accent);
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
-.filter-btn.active {
-    font-weight: 600;
-}
-
+/* Сітка карток: рівно 3 колонки на десктопі (разом 9 карток) */
 .pets-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
 }
 
+@media (min-width: 650px) {
+  .pets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pets-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+  }
+}
+
+/* Стиль прозорої картки без фону та тіней за макетом */
 .pet-card {
-    display: flex;
-    flex-direction: column;
-    background: none;
+  display: flex;
+  flex-direction: column;
+  background: none;
 }
 
+/* Обертка фото з фіксованою висотою та закругленням */
 .pet-image-wrapper {
-    width: 100%;
-    height: 280px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    background-color: var(--color-scheme-1-foreground);
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background-color: #ebdcd9;
+  /* Бежевый цвет из макета */
+  display: flex;
+  /* Центрируем лапку внутри */
+  align-items: center;
+  justify-content: center;
 }
 
 .pet-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: none !important;
+}
+.pet-image-wrapper::after {
+  content: "🐾";
+  font-size: 5rem;
+  /* Крупный красивый размер */
+  opacity: 0.4;
+  /* Делаем её слегка прозрачной и стильной */
+  line-height: 1;
+  display: block;
 }
 
+/* Текстовий блок картки */
 .pet-info-block {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
 }
 
+/* Дрібний сірий напис виду над ім'ям */
 .pet-card-top-type {
-    font-size: 0.8rem;
-    color: var(--color-neutral-dark);
-    text-transform: capitalize;
-    margin-bottom: 2px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+  margin-bottom: 2px;
 }
 
+/* Велике жирне ім'я тварини */
 .pet-name {
-    font-family: var(--second-family);
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--color-scheme-1-text);
-    margin-bottom: 4px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 4px;
 }
 
+/* Текстові підкатегорії під ім'ям */
 .pet-tags-text {
-    font-size: 0.85rem;
-    color: var(--color-neutral-dark);
-    margin-bottom: 12px;
-    line-height: 1.4;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
+/* Вік та стать в один рядок */
 .pet-meta-tags {
-    display: flex;
-    gap: 20px;
-    font-size: 0.9rem;
-    color: var(--color-scheme-1-text);
-    margin-bottom: 12px;
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
 }
 
+.pet-meta-tags span {
+  display: inline-block;
+}
+
+/* Опис тварини */
 .pet-desc {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--color-neutral-darker);
-    margin-bottom: 20px;
-    flex-grow: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
+/* Кнопка «Дізнатись більше» за макетом */
 .btn-more {
-    background-color: var(--color-scheme-1-foreground);
-    border: 1px solid var(--color-scheme-1-text);
-    color: var(--color-scheme-1-text);
-    padding: 12px;
-    border-radius: 30px;
-    font-family: var(--font-family);
-    font-size: 14px;
-    font-weight: 400;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
-    margin-top: auto;
+  background-color: #ebdcd9;
+  /* Легкий бежевий фон кнопки */
+  border: 1px solid #000000;
+  /* Тонка чорна рамка */
+  color: #000000;
+  padding: 12px;
+  border-radius: 30px;
+  /* Округлі краї */
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
 }
 
 .btn-more:hover {
-    background-color: var(--color-scheme-2-background);
-    color: var(--color-scheme-2-text);
-    border-color: var(--color-scheme-2-background);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
 }
 
+/* Нижня кнопка пагінації «Завантажити ще» */
 .pagination-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-load-more {
-    background-color: var(--color-scheme-2-background);
-    color: var(--color-scheme-2-text);
-    border: none;
-    padding: 14px 40px;
-    border-radius: 25px;
-    font-family: var(--font-family);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .btn-load-more:hover {
-    background-color: var(--color-mariner-dark);
+  background-color: var(--color-primary-hover);
 }
 
 .btn-load-more:disabled {
-    display: none;
+  display: none;
 }
 
+/* Модальне вікно */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--opacity-neutral-darkest-40);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-    padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
 }
 
 .modal-overlay.open {
-    opacity: 1;
-    pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-content {
-    background-color: var(--color-white);
-    padding: 30px;
-    border-radius: 16px;
-    max-width: 550px;
-    width: 100%;
-    position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
-    border: 1px solid var(--color-scheme-1-border);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 550px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--color-neutral-dark);
-    line-height: 1;
-}
-
-
-@media (min-width: 375px) {
-    .container {
-        width: 375px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        width: 768px;
-        padding: 64px 32px 32px;
-        
-    }
-
-    .section-title {
-        line-height: 1.2;
-       
-    }
-
-    .section-subtitle {
-        font-size: 16px;
-       
-    }
-
-    .categories-filter {
-        margin-bottom: 32px;
-        
-        gap: 20px;
-    }
-
-    .pets-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .btn-more {
-        font-size: 14px;
-        
-        font-weight: 400;
-        
-    }
-}
-
-
-@media (min-width: 1440px) {
-    .container {
-        width: 1440px;
-        padding: 80px 64px 32px;
-        
-    }
-
-    .section-title {
-        font-size: 48px;
-        
-        line-height: 1.2;
-        
-    }
-
-    .section-subtitle {
-        font-size: 18px;
-        line-height: 1.5;
-        
-    }
-
-    .pet-name {
-        font-size: 48px;
-    }
-
-    .pets-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px 30px;
-    }
-
-    .btn-more {
-        font-size: 16px;
-        
-        font-weight: 400;
-        
-        margin-top: 40px;
-        
-    }
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
 }
